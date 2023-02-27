@@ -5,6 +5,6 @@ import UsingFetch from "../features/UsingFetch";
 import UsingSWR from "../features/UsingSWR";
 ("../features/UsingFetch");
 
-import UsingReactQuery from "../features/UsingReactQuery";
+import UsingReactQuery from "./UsingReactQuery/ReactQuery";
 
 export { UsingFetch, UsingAxios, UsingSWR, UsingReactQuery };

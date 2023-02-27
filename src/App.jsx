@@ -1,8 +1,8 @@
-import { Suspense, useState } from "react";
+import React from "react";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import { UsingAxios, UsingFetch, UsingReactQuery, UsingSWR } from "./features";
-
+import ReactQuery from "./features/UsingReactQuery/ReactQuery";
 function App() {
   return (
     <>
@@ -12,8 +12,8 @@ function App() {
         {/* <UsingFetch /> */}
         {/* <UsingAxios /> */}
         {/* <UsingSWR /> */}
-        <UsingReactQuery />
         {/* </Suspense> */}
+        <ReactQuery />
       </div>
     </>
   );
