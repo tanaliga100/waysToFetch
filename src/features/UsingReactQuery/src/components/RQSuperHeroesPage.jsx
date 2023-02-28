@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import { useSuperHeroesData } from "./hooks/useSuperHeroesData";
+import { useSuperHeroesData } from "../hooks/useSuperHeroesData/";
 
 const RQSuperHeroesPage = () => {
   const onSuccess = (data) => {

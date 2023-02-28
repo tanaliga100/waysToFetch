@@ -13,7 +13,11 @@ const ParallelQueries = () => {
   const { data: superHeroes } = useQuery("super-heroes", fetchSuperHeroes);
   const { data: friends } = useQuery("friends", fetchFriends);
 
-  return <div>ParallelQueries</div>;
+  return (
+    <>
+      <h1>Parallel Queries</h1>
+    </>
+  );
 };
 
 export default ParallelQueries;
