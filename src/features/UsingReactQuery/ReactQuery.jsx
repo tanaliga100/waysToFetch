@@ -2,8 +2,10 @@ import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
 import Home from "./src/Home";
+import RQSuperHero from "./src/RQSuperHero";
 import RQSuperHeroesPage from "./src/RQSuperHeroesPage";
 import SuperHeroesPage from "./src/SuperHeroesPage";
+import ParallelQueries from "./src/ParallelQueries";
 
 // query Instance
 const queryClient = new QueryClient();
@@ -37,7 +39,9 @@ const ReactQuery = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
+            <Route path="/rq-parallel" element={<ParallelQueries />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+            <Route path="/rq-super-heroes/:heroId" element={<RQSuperHero />} />
           </Routes>
         </div>
       </BrowserRouter>

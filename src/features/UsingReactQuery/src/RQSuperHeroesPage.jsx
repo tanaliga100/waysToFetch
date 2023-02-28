@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
-import { useSuperHeroData } from "./hooks/useSuperHero";
+import { Link } from "react-router-dom";
+import { useSuperHeroesData } from "./hooks/useSuperHeroesData";
 
 const RQSuperHeroesPage = () => {
   const onSuccess = (data) => {
@@ -12,7 +13,7 @@ const RQSuperHeroesPage = () => {
   };
 
   const { isLoading, data, error, isError, isFetching, refetch } =
-    useSuperHeroData(onSuccess, onError);
+    useSuperHeroesData(onSuccess, onError);
 
   if (isLoading) {
     return <p>Wait... loading...</p>;
@@ -20,20 +21,22 @@ const RQSuperHeroesPage = () => {
   if (isError) {
     return <p>{error.message}</p>;
   }
-  console.log("select", data);
-  console.log({ isLoading, isFetching });
+  // console.log("select", data);
+  // console.log({ isLoading, isFetching });
   return (
     <div>
       <h3>RQSuperHeroesPage</h3>
       <section>
-        {/* {data.data.map((s) => (
-          <div key={s.id}>
-            {s.name} :<small>{s.alterEgo}</small>
+        {data.data.map((hero) => (
+          <div key={hero.id}>
+            <Link to={`/rq-super-heroes/${hero.id}`}>
+              <h3>{hero.name}</h3>
+            </Link>
           </div>
-        ))} */}
-        {data.map((hero) => (
-          <div key={hero}>{hero}</div>
         ))}
+        {/* {data.map((hero) => (
+          <div key={hero}>{hero}</div>
+        ))} */}
       </section>
     </div>
   );
